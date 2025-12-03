@@ -2,5 +2,8 @@
 #include <string.h>
 
 int main() {
-printf("Bonjour le CNAM\n");
+printf("Tailles des types de base en octets :\n\n"\n");
+
+printf("Tailles des types de base en octets :\n\n"\n");
 }
+
