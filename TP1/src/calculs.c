@@ -3,7 +3,7 @@
 int main() {
     int num1 = 20;
     int num2 = 4;
-    char op = '&';   // Changez cette valeur pour tester les opérations
+    char op = '+';   // Changez cette valeur pour tester les opérations
 
     int resultat;
 
@@ -63,5 +63,6 @@ int main() {
 
     return 0;
 }
+
 
 
