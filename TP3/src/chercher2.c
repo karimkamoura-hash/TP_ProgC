@@ -6,6 +6,7 @@ int main() {
         "Bonjour, comment ça va ?",
         "Le temps est magnifique aujourd'hui.",
         "C'est une belle journée.",
+    
         "La programmation en C est amusante.",
         "Les tableaux en C sont puissants.",
         "Les pointeurs en C peuvent être déroutants.",
