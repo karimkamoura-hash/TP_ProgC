@@ -1,4 +1,4 @@
-/*
+/*/*
  * SPDX-FileCopyrightText: 2021 John Samuel
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
@@ -15,5 +15,16 @@
  * en retour
  */
 int renvoie_message(int, char *);
+
+#endif
+*/
+
+#ifndef SERVEUR_H
+#define SERVEUR_H
+
+#define PORT 12345
+#define TAILLE_BUFFER 1024
+
+void recois_envoie_message();
 
 #endif
