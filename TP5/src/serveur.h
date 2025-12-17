@@ -16,7 +16,7 @@
  */
 //int renvoie_message(int, char *);
 
-#endif
+//#endif
 */
 
 #ifndef SERVEUR_H
