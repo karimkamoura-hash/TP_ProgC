@@ -48,6 +48,7 @@ int negation(int num1, int num2)
 c
 Copier le code
 #include <stdio.h>
+#include <stddef.h>
 #include "operator.h"
 
 int main()
@@ -108,6 +109,7 @@ int main()
 
     return 0;
 }
+
 
 
 
