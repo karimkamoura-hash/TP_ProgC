@@ -1,52 +1,28 @@
 #include "operator.h"
 
-int somme(int num1, int num2)
-{
-    return num1 + num2;
-}
+int somme(int n1, int n2) { return n1 + n2; }
+int difference(int n1, int n2) { return n1 - n2; }
+int produit(int n1, int n2) { return n1 * n2; }
 
-int difference(int num1, int num2)
+int quotient(int n1, int n2)
 {
-    return num1 - num2;
-}
-
-int produit(int num1, int num2)
-{
-    return num1 * num2;
-}
-
-int quotient(int num1, int num2)
-{
-    if (num2 != 0)
-        return num1 / num2;
+    if (n2 != 0) return n1 / n2;
     return 0;
 }
 
-int modulo(int num1, int num2)
+int modulo(int n1, int n2)
 {
-    if (num2 != 0)
-        return num1 % num2;
+    if (n2 != 0) return n1 % n2;
     return 0;
 }
 
-int et_logique(int num1, int num2)
+int et_logique(int n1, int n2) { return n1 & n2; }
+int ou_logique(int n1, int n2) { return n1 | n2; }
+int negation(int n1, int n2)
 {
-    return num1 & num2;
+    (void)n2;
+    return ~n1;
 }
-
-int ou_logique(int num1, int num2)
-{
-    return num1 | num2;
-}
-
-int negation(int num1, int num2)
-{
-    (void) num2; // ignoré pour la négation
-    return ~num1;
-}
-
-
-
 
 
 
