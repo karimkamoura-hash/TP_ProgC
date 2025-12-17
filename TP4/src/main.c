@@ -1,69 +1,58 @@
 #include <stdio.h>
-#include "operator.h"
+#include <string.h>
+#include "fichier.h"
 
 int main()
 {
-    int num1, num2;
-    char op;
-    int result = 0;
+    int choix;
+    char nom_fichier[100];
+    char message[255];
 
-    printf("Entrez num1 : ");
-    scanf("%d", &num1);
-
-    printf("Entrez num2 : ");
-    scanf("%d", &num2);
-
-    printf("Entrez l'operateur (+, -, *, /, %%, &, |, ~) : ");
-    scanf(" %c", &op); 
-
-    switch(op)
+    while (1)
     {
-        case '+':
-            result = somme(num1, num2);
-            break;
+        printf("\nQue souhaitez-vous faire ?\n");
+        printf("1. Lire un fichier\n");
+        printf("2. Ecrire dans un fichier\n");
+        printf("3. Quitter\n");
+        printf("Votre choix : ");
+        scanf("%d", &choix);
 
-        case '-':
-            result = difference(num1, num2);
-            break;
+        getchar(); // nettoyer buffer entrée clavier
 
-        case '*':
-            result = produit(num1, num2);
-            break;
+        switch (choix)
+        {
+            case 1:
+                printf("\nEntrez le nom du fichier a lire : ");
+                scanf("%s", nom_fichier);
+                lire_fichier(nom_fichier);
+                break;
 
-        case '/':
-            result = quotient(num1, num2);
-            break;
+            case 2:
+                printf("\nEntrez le nom du fichier dans lequel vous souhaitez ecrire : ");
+                scanf("%s", nom_fichier);
 
-        case '%':
-            result = modulo(num1, num2);
-            break;
+                getchar();
 
-        case '&':
-            result = et_logique(num1, num2);
-            break;
+                printf("Entrez le message a ecrire : ");
+                fgets(message, sizeof(message), stdin);
 
-        case '|':
-            result = ou_logique(num1, num2);
-            break;
+                // retirer \n final
+                message[strcspn(message, "\n")] = '\0';
 
-        case '~':
-            result = negation(num1, num2);
-            break;
+                ecrire_dans_fichier(nom_fichier, message);
+                break;
 
-        default:
-            printf("Operateur inconnu !\n");
-            return 1;
+            case 3:
+                printf("Au revoir !\n");
+                return 0;
+
+            default:
+                printf("Choix invalide !\n");
+        }
     }
-
-    printf("Resultat : %d\n", result);
 
     return 0;
 }
-
-
-
-
-
 
 
 
