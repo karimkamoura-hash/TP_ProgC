@@ -1,58 +1,30 @@
+#include "liste.h"
 #include <stdio.h>
-#include <string.h>
-#include "fichier.h"
 
 int main()
 {
-    int choix;
-    char nom_fichier[100];
-    char message[255];
+    struct liste_couleurs ma_liste;
+    init_liste(&ma_liste);
 
-    while (1)
-    {
-        printf("\nQue souhaitez-vous faire ?\n");
-        printf("1. Lire un fichier\n");
-        printf("2. Ecrire dans un fichier\n");
-        printf("3. Quitter\n");
-        printf("Votre choix : ");
-        scanf("%d", &choix);
+    struct couleur tab_couleurs[10] = {
+        {0xFF,0x00,0x00,0xFF}, // rouge
+        {0x00,0xFF,0x00,0xFF}, // vert
+        {0x00,0x00,0xFF,0xFF}, // bleu
+        {0xFF,0xFF,0x00,0xFF}, // jaune
+        {0x00,0xFF,0xFF,0xFF}, // cyan
+        {0xFF,0x00,0xFF,0xFF}, // magenta
+        {0x80,0x80,0x80,0xFF}, // gris
+        {0xFF,0x80,0x00,0xFF}, // orange
+        {0x80,0x00,0x80,0xFF}, // violet
+        {0x00,0x00,0x00,0xFF}, // noir
+    };
 
-        getchar(); // nettoyer buffer entrée clavier
+    for (int i = 0; i < 10; i++)
+        insertion(&tab_couleurs[i], &ma_liste);
 
-        switch (choix)
-        {
-            case 1:
-                printf("\nEntrez le nom du fichier a lire : ");
-                scanf("%s", nom_fichier);
-                lire_fichier(nom_fichier);
-                break;
-
-            case 2:
-                printf("\nEntrez le nom du fichier dans lequel vous souhaitez ecrire : ");
-                scanf("%s", nom_fichier);
-
-                getchar();
-
-                printf("Entrez le message a ecrire : ");
-                fgets(message, sizeof(message), stdin);
-
-                // retirer \n final
-                message[strcspn(message, "\n")] = '\0';
-
-                ecrire_dans_fichier(nom_fichier, message);
-                break;
-
-            case 3:
-                printf("Au revoir !\n");
-                return 0;
-
-            default:
-                printf("Choix invalide !\n");
-        }
-    }
+    printf("Liste des couleurs :\n");
+    parcours(&ma_liste);
 
     return 0;
 }
-
-
 
