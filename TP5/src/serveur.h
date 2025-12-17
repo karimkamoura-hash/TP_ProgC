@@ -5,16 +5,16 @@
  *
  */
 
-/*#ifndef __SERVER_H__
-#define __SERVER_H__*/
+//#ifndef __SERVER_H__
+//#define __SERVER_H__
 
-#define PORT 8089
+//#define PORT 8089
 
 /* accepter la nouvelle connection d'un client et lire les données
  * envoyées par le client. En suite, le serveur envoie un message
  * en retour
  */
-int renvoie_message(int, char *);
+//int renvoie_message(int, char *);
 
 #endif
 */
